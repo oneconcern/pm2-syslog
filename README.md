@@ -1,31 +1,27 @@
 # pm2-syslog
 
-Redirect all logs of PM2 + Apps managed into `/var/log/syslog`
+syslog configurable as ain2
 
-## Configure OS
+## Configure
 
-Edit `/etc/rsyslog.conf` and uncomment:
+`pm2 set pm2-syslog:syslog_tag`
 
-```
-# provides UDP syslog reception
-module(load="imudp")
-input(type="imudp" port="514")
-```
+`pm2 set pm2-syslog:syslog_facility`
 
-Restart rsyslog:
+`pm2 set pm2-syslog:syslog_hostname`
 
-```
-$ sudo service rsyslog restart
-```
+`pm2 set pm2-syslog:syslog_address`
+
+`pm2 set pm2-syslog:syslog_port`
 
 ## Install module
 
 ```
 # Install
-$ pm2 install pm2-syslog
+$ pm2 install git://github.com/barinbritva/pm2-syslog.git
 
 # Uninstall
-$ pm2 uninstall pm2-syslog
+$ pm2 uninstall git://github.com/barinbritva/pm2-syslog.git
 ```
 
 # License

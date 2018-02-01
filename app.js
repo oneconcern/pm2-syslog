@@ -1,7 +1,28 @@
 
 var pm2       = require('pm2');
 var SysLogger = require('ain2');
-var logger    = new SysLogger({tag: 'pm2',  facility: 'syslog'});
+var pmx       = require('pmx');
+
+var conf      = pmx.initModule();
+
+options = {};
+if (conf.syslog_tag) {
+  options.tag = conf.syslog_tag
+}
+if (conf.syslog_facility) {
+  options.tag = conf.syslog_facility
+}
+if (conf.syslog_hostname) {
+  options.tag = conf.syslog_hostname
+}
+if (conf.syslog_address) {
+  options.tag = conf.syslog_address
+}
+if (conf.syslog_port) {
+  options.tag = conf.syslog_port
+}
+
+var logger    = new SysLogger(options);
 
 pm2.launchBus(function(err, bus) {
   bus.on('*', function(event, data){
