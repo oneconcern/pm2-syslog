@@ -4,15 +4,19 @@ syslog configurable as ain2
 
 ## Configure
 
-`pm2 set pm2-syslog:syslog_tag`
+All parameters are optional
 
-`pm2 set pm2-syslog:syslog_facility`
+`pm2 set pm2-syslog:syslog_tag [value]`
 
-`pm2 set pm2-syslog:syslog_hostname`
+`pm2 set pm2-syslog:syslog_facility [value]`
 
-`pm2 set pm2-syslog:syslog_address`
+`pm2 set pm2-syslog:syslog_hostname [value]`
 
-`pm2 set pm2-syslog:syslog_port`
+`pm2 set pm2-syslog:syslog_address [value]`
+
+`pm2 set pm2-syslog:syslog_port [value]`
+
+`pm2 set pm2-syslog:syslog_transport [value]`
 
 ## Install module
 

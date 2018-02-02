@@ -10,16 +10,19 @@ if (conf.syslog_tag) {
   options.tag = conf.syslog_tag
 }
 if (conf.syslog_facility) {
-  options.tag = conf.syslog_facility
+  options.facility = conf.syslog_facility
 }
 if (conf.syslog_hostname) {
-  options.tag = conf.syslog_hostname
+  options.hostname = conf.syslog_hostname
 }
 if (conf.syslog_address) {
-  options.tag = conf.syslog_address
+  options.address = conf.syslog_address
 }
 if (conf.syslog_port) {
-  options.tag = conf.syslog_port
+  options.port = conf.syslog_port
+}
+if (conf.syslog_transport ) {
+  options.transport = conf.syslog_transport
 }
 
 var logger    = new SysLogger(options);
